@@ -81,8 +81,8 @@ public class SumSegmentTree {
                                         .collect(Collectors.toCollection(ArrayList::new));
 
         SegmentTree tree = new SegmentTree(0, data.size() - 1, data);
-        String input2 = br.readLine();
-        int q = Integer.parseInt(input2);
+        input = br.readLine();
+        int q = Integer.parseInt(input);
         while (q-- > 0) {
             input = br.readLine();
             String [] queryParams = input.split(" ");
@@ -101,3 +101,5 @@ public class SumSegmentTree {
 
     }
 }
+
+// https://leetcode.com/problems/range-sum-query-mutable
