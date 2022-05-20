@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.Queue;
 
 class TreeNode<T> {
@@ -8,15 +9,15 @@ class TreeNode<T> {
 
 class BinaryTree {
 
-    public void preOrder(TreeNode node) {
+    public void preOrder(TreeNode<Integer> node) {
         if(node == null) return;
         display(node);
         preOrder(node.left);
         preOrder(node.right);
     }
 
-    public void inOrder(TreeNode node) {
-        if(root != null) {
+    public void inOrder(TreeNode<Integer> node) {
+        if(node != null) {
             inOrder(node.left);
             display(node);
             inOrder(node.right);
@@ -24,18 +25,18 @@ class BinaryTree {
     }
 
 
-    public void postOrder(TreeNode node) {
-        if(root != null) {
+    public void postOrder(TreeNode<Integer> node) {
+        if(node != null) {
             inOrder(node.left);
             inOrder(node.right);
             display(node);
         }
     }
 
-    public void levelOrder(TreeNode node) {
-        Queue<TreeNode> queue;
+    public void levelOrder(TreeNode<Integer> node) {
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.add(node);
-        while(!q.isEmpty()) {
+        while(!queue.isEmpty()) {
             node = queue.poll();
             display(node);
             if(node.left != null) {
@@ -48,7 +49,7 @@ class BinaryTree {
     }
 
 
-    display(TreeNode node) {
+    public void display(TreeNode<Integer> node) {
         System.out.println(node.data + " -> ");
     }
 }
